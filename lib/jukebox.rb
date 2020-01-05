@@ -50,8 +50,30 @@ def play(songs)
   end
 end
 
-def run 
+def enter_a_command
   puts "Please enter a command:"
+end
+
+def run(songs) 
+  run_commands = ["help", "list", "play"]
+  enter_a_command
   response_command = gets.strip
-  list(songs)
+  while run_commands.include? response_command do 
+    if response_command == "help"
+      help
+      enter_a_command
+      response_command = gets.strip
+    elsif response_command == "list"
+      list(songs)
+      enter_a_command
+      response_command = gets.strip
+    elsif response_command == "play"
+      play(songs)
+      enter_a_command
+      response_command = gets.strip
+    end
+  end
+  if response_command == "exit"
+    exit_jukebox
+  end
 end  
