@@ -52,8 +52,8 @@ def play(songs)
   end
 end
 
-# def run 
-#   puts "Please enter a command:"
-#   response_command = gets.strip
+def run 
+  puts "Please enter a command:"
+  response_command = gets.strip
 
-# end  
+end  
