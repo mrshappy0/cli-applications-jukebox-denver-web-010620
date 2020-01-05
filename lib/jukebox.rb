@@ -79,4 +79,4 @@ def run(songs, run_commands)
   end
 end  
 
-run(songs)
+run(songs, run_commands)
