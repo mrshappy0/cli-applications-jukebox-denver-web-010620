@@ -20,7 +20,7 @@ songs = [
   "Amos Lee - Keep It Loose, Keep It Tight"
 ]
 
-command_options = ["help", "list", "play", "exit"]
+run_commands = ["help", "list", "play"]
 
 def help 
   puts "I accept the following commands:"
@@ -52,8 +52,24 @@ def play(songs)
   end
 end
 
-def run 
+def enter_a_command
   puts "Please enter a command:"
-  response_command = gets.strip
+end
 
+def run 
+  enter_a_command
+  response_command = gets.strip
+  while run_commands.include? response_command do 
+    if response_command = "help"
+      help
+      enter_a_command
+      
+    elsif response_command = "list"
+      list(songs)
+      enter_a_command
+    elsif response_command = "play"
+      play(songs)
+      enter_a_command
+  end
+  
 end  
