@@ -54,7 +54,7 @@ def enter_a_command
   puts "Please enter a command:"
 end
 
-def run(songs, run_commands) 
+def run(songs) 
   run_commands = ["help", "list", "play"]
   enter_a_command
   response_command = gets.strip
