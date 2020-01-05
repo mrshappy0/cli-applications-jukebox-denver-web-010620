@@ -60,16 +60,20 @@ def run
   enter_a_command
   response_command = gets.strip
   while run_commands.include? response_command do 
-    if response_command = "help"
+    if response_command == "help"
       help
       enter_a_command
-      
-    elsif response_command = "list"
+      response_command = gets.strip
+    elsif response_command == "list"
       list(songs)
       enter_a_command
-    elsif response_command = "play"
+      response_command = gets.strip
+    elsif response_command == "play"
       play(songs)
       enter_a_command
+      response_command = gets.strip
   end
-  
+  if response_command == "exit"
+    exit_jukebox
+  end
 end  
