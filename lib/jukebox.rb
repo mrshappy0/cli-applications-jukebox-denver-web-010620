@@ -31,13 +31,18 @@ end
 def play(songs)
   puts "Please enter a song name or number:"
   number_or_song = gets.strip
-  if number_or_song =~ /\d/ 
-    integer = number_or_song.to_i
-    puts "Playing #{songs[integer-1]}"
-  else 
+  if number_or_song =~ /[a-z]/ 
+    && (songs.include? number_or_song)
     puts "Playing #{number_or_song}"
+  elsif number_or_song =~ /\d/ 
+  && (songs.include? songs[number_or_song.to_i-1])
+    puts "Playing #{songs[number_or_song.to_i-1]}"
+  else 
+    puts "Invalid input, please try again"
   end
 end
+
+# play(songs)
 
 def list (songs)
    songs.each_with_index {
