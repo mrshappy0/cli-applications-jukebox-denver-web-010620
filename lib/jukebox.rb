@@ -56,7 +56,7 @@ def enter_a_command
   puts "Please enter a command:"
 end
 
-def run 
+def run(songs) 
   enter_a_command
   response_command = gets.strip
   while run_commands.include? response_command do 
@@ -78,4 +78,4 @@ def run
   end
 end  
 
-run 
+run(songs)
