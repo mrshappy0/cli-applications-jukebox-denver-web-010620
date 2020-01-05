@@ -72,6 +72,7 @@ def run(songs)
       play(songs)
       enter_a_command
       response_command = gets.strip
+    end
   end
   if response_command == "exit"
     exit_jukebox
