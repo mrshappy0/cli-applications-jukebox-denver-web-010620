@@ -55,6 +55,7 @@ def enter_a_command
 end
 
 def run(songs, run_commands) 
+  
   enter_a_command
   response_command = gets.strip
   while run_commands.include? response_command do 
