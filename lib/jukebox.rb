@@ -56,7 +56,7 @@ def enter_a_command
   puts "Please enter a command:"
 end
 
-def run(songs) 
+def run(songs, run_commands) 
   enter_a_command
   response_command = gets.strip
   while run_commands.include? response_command do 
